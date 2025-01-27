@@ -19,7 +19,7 @@ app.use(cors())
 app.use(express.json())
 
 // Routes
-app.get('/',(req,res)=> res.send("API Working Successfully"))
+app.get('/',(req,res)=> res.send("API Working Successfully"))/
 app.get("/debug-sentry", function mainHandler(req, res) {
     throw new Error("My first Sentry error!");
   });
