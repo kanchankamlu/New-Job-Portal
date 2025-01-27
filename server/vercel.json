@@ -8,7 +8,8 @@
               "includeFiles": [
                   "dist/**"
               ]
-          }
+          },
+          "maxDuration": 60
       }
   ],
   "routes": [
