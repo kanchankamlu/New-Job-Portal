@@ -14,8 +14,7 @@
   "routes": [
       {
           "src": "/(.*)",
-          "dest": "sever.js",
-          "maxDuration": 30
+          "dest": "sever.js"
       }
   ]
 }
