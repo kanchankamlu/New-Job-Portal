@@ -1,20 +1,20 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "sever.js",
-        "use": "@vercel/node",
-        "config": {
-          "includeFiles": ["dist/**"],
-          "maxDuration": 50
-        }
+  "version": 2,
+  "builds": [
+    {
+      "src": "server.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["dist/**"],
+        "maxDuration": 50,
+        "memory": 1024
       }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "sever.js"
-      }
-    ]
-  }
-  
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "server.js"
+    }
+  ]
+}
