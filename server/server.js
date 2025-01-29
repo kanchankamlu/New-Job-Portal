@@ -27,9 +27,9 @@ initializeDB();
 // Routes
 app.get('/', (req, res) => res.send('API Working Successfully'));
 
-// app.get('/debug-sentry', (req, res) => {
-//   throw new Error('My first Sentry error!');
-// });
+ app.get('/debug-sentry', (req, res) => {
+   throw new Error('My first Sentry error!');
+ });
 
 app.post('/webhooks', clerkWebhooks);
 
