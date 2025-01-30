@@ -16,8 +16,8 @@ const Navbar = () => {
   const {setShowRecruiterLogin} = useContext(AppContext)
 
   return (
-    <div className='navbar'>
-      <div className='container px-4 2xl:px-2 mx-auto flex justify-between items-center'>
+    <div>
+      <div className='container px-4 2xl:px-2 mx-auto h-[70px] shadow-xl flex justify-between items-center'>
         <img onClick={() => navigate('/')}  src={assets.logo01} alt="" className='logo cursor-pointer' />
         {
           user
