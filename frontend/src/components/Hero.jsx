@@ -26,7 +26,7 @@ const Hero = () => {
                   
   return (
     <div className='container 2xl:px-20 mx-auto my-10 '>
-      <div className='Hero text-black py-16 text-center mx-2 rounder-xl' >
+      <div className='Hero text-black py-16 text-center mx-2 rounder-xl'>
         <h2 className='text-2xl md-text-3xl lg:text-4xl font font-medium mb-4'>Your ideal job awaits, start the search</h2>
         <p className='mb-8 max-w-xl mx-auto text-sm font-light px-5 '>Your Next Big Career Move Starts Right Here - Explore The Best Job Opportunities And Take the first Step Toword Your Future..! </p>
         <div className='flex item-center justify-between bg-white rounded text-gray-600 max-w-xl pl-4 mx-4 sm:mx-auto '>
