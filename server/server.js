@@ -23,6 +23,21 @@ async function initializeDB() {
 }
 
 initializeDB();
+// Set CSP Header Middleware
+app.use((req, res, next) => {
+  res.setHeader(
+    "Content-Security-Policy",
+    "default-src 'self'; script-src 'self' https://clerk.accounts.dev https://js.sentry-cdn.com; connect-src 'self' https://clerk-telemetry.com https://*.sentry.io;"
+  );
+  next();
+});
+
+
+// Example route for testing
+// app.get('/', (req, res) => {
+//   res.send('CSP Header Set!');
+// });
+
 
 // Routes
 app.get('/', (req, res) => res.send('API Working Successfully'));
