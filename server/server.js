@@ -3,7 +3,7 @@ import express from 'express';
 import cors from 'cors';
 import 'dotenv/config';
 import connectDB from './config/db.js';
-import * as Sentry from '@sentry/node';
+//import * as Sentry from '@sentry/node';
 import { clerkWebhooks } from './controllers/webhooks.js';
 
 const app = express();
@@ -27,10 +27,11 @@ initializeDB();
 app.use((req, res, next) => {
   res.setHeader(
     "Content-Security-Policy",
-    "default-src 'self'; script-src 'self' https://clerk.accounts.dev https://js.sentry-cdn.com; connect-src 'self' https://clerk-telemetry.com https://*.sentry.io;"
+    "default-src 'self'; script-src 'self' https://clerk.accounts.dev; connect-src 'self' https://clerk-telemetry.com;"
   );
   next();
-});  
+});
+
 
 
 // Example route for testing
@@ -42,13 +43,13 @@ app.use((req, res, next) => {
 // Routes
 app.get('/', (req, res) => res.send('API Working Successfully'));
 
- app.get('/debug-sentry', (req, res) => {
-   throw new Error('My first Sentry error!');
- });
+//  app.get('/debug-sentry', (req, res) => {
+//    throw new Error('My first Sentry error!');
+//  });
 
 app.post('/webhooks', clerkWebhooks);
 
-Sentry.setupExpressErrorHandler(app);
+//Sentry.setupExpressErrorHandler(app);
 
 // For local testing only
 if (process.env.NODE_ENV !== 'production') {
