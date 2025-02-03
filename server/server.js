@@ -30,7 +30,7 @@ app.use((req, res, next) => {
     "default-src 'self'; script-src 'self' https://clerk.accounts.dev https://js.sentry-cdn.com; connect-src 'self' https://clerk-telemetry.com https://*.sentry.io;"
   );
   next();
-});
+});  
 
 
 // Example route for testing

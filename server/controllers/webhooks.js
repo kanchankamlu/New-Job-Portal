@@ -13,7 +13,7 @@ export const clerkWebhooks = async (req, res) => {
         await whook.verify(JSON.stringify(req.body), {
             "svix-id": req.headers["svix-id"],
             "svix-timestamp": req.headers["svix-timestamp"],
-            "svix-signature": req.headers["svix-signatre"]
+            "svix-signature": req.headers["svix-signature"]
         })
 
         // Getting data from request body
@@ -33,6 +33,7 @@ export const clerkWebhooks = async (req, res) => {
                 }
                 await User.create(userData)
                 res.json({})
+                console.log(userData)
                 break;
             }
 
@@ -45,6 +46,7 @@ export const clerkWebhooks = async (req, res) => {
                 }
                 await User.findByIdAndUpdate(data.id, userData)
                 res.json({})
+                console.log(userData)
                 break;
 
             }
