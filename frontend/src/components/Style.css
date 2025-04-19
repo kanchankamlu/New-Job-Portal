@@ -1,0 +1,24 @@
+
+.logo{
+    padding-left: 23px;
+    height: 53px;
+    background-color: none;
+}
+.login:hover{
+    color: white;
+    border-radius: 25px;
+    padding: 10px;
+    background-color: orange;
+}
+.Hero{
+    object-fit: contain; 
+    background-image: url('https://img.freepik.com/premium-photo/modern-workspace-top-view-flat-lay-style_61343-892.jpg?ga=GA1.1.923393391.1738237881&semt=ais_hybrid'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+}
+.scale-125{
+    accent-color: rgb(140, 33, 167);
+}
+
