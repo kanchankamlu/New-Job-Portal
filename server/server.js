@@ -1,10 +1,10 @@
-import './config/instrument.js';
+
 import express from 'express';
 import cors from 'cors';
 import 'dotenv/config';
 import connectDB from './config/db.js';
-//import * as Sentry from '@sentry/node';
-import { clerkWebhooks } from './controllers/webhooks.js';
+
+import companyRoutes from './routes/companyRoutes.js'
 
 const app = express();
 
@@ -23,33 +23,14 @@ async function initializeDB() {
 }
 
 initializeDB();
-// Set CSP Header Middleware
-app.use((req, res, next) => {
-  res.setHeader(
-    "Content-Security-Policy",
-    "default-src 'self'; script-src 'self' https://clerk.accounts.dev; connect-src 'self' https://clerk-telemetry.com;"
-  );
-  next();
-});
-
-
-
-// Example route for testing
-// app.get('/', (req, res) => {
-//   res.send('CSP Header Set!');
-// });
-
 
 // Routes
 app.get('/', (req, res) => res.send('API Working Successfully'));
 
-//  app.get('/debug-sentry', (req, res) => {
-//    throw new Error('My first Sentry error!');
-//  });
 
-app.post('/webhooks', clerkWebhooks);
 
-//Sentry.setupExpressErrorHandler(app);
+app.use('/api/company',companyRoutes)
+
 
 // For local testing only
 if (process.env.NODE_ENV !== 'production') {
